@@ -268,7 +268,7 @@
   </main>
 
   <footer>
-    Interface fictícia · Demonstração visual
+    Terms of use   Privacy & cookies   ...
   </footer>
 
   <script>
@@ -276,9 +276,16 @@
     const options = document.getElementById("options");
 
     document.getElementById("continue").addEventListener("click", () => {
-      message.textContent = "Demonstração concluída. Nenhum dado foi enviado.";
-      options.setAttribute("aria-expanded", "false");
-    });
+	const user = document.getElementById("email").value.trim();
+
+	if (!user) {
+		message.textContent = "Introduz um utilizador de demonstração.";
+		return;
+	}
+
+  sessionStorage.setItem("demoUser", user);
+  window.location.href = "./password.html";
+});
 
     options.addEventListener("click", () => {
       const expanded = options.getAttribute("aria-expanded") === "true";
