@@ -290,9 +290,6 @@
     options.addEventListener("click", () => {
       const expanded = options.getAttribute("aria-expanded") === "true";
       options.setAttribute("aria-expanded", String(!expanded));
-      message.textContent = expanded
-        ? ""
-        : "Esta página é apenas um exemplo visual, sem autenticação ou recolha de dados.";
     });
   </script>
 </body>
